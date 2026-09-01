@@ -1,0 +1,114 @@
+.redbook-pull-login-modal {
+  width: 560px;
+}
+
+.redbook-pull-login-modal .modal-content {
+  padding: 0;
+}
+
+.redbook-pull-login-modal .modal-content > div {
+  padding: 16px 16px 4px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.redbook-pull-login-actions {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.redbook-pull-login-status {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.redbook-pull-sync-progress {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 4px 0;
+}
+
+/* 专辑选择弹窗 */
+.redbook-pull-album-picker {
+  width: 480px;
+  max-width: 90vw;
+}
+
+.redbook-pull-album-picker h3 {
+  margin: 4px 0 8px 0;
+  font-size: 15px;
+}
+
+.redbook-pull-album-picker p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 4px 0 8px 0;
+  line-height: 1.6;
+}
+
+.redbook-pull-album-picker-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.redbook-pull-album-picker-toolbar button {
+  padding: 3px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  background: var(--background-modifier-border);
+  color: var(--text-normal);
+}
+
+.redbook-pull-album-picker-list {
+  max-height: 360px;
+  overflow-y: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+}
+
+.redbook-pull-album-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.redbook-pull-album-picker-row:last-child {
+  border-bottom: none;
+}
+
+.redbook-pull-album-picker-row:hover {
+  background: var(--background-secondary);
+}
+
+.redbook-pull-album-picker-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.redbook-pull-album-picker-count {
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.redbook-pull-album-picker-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
