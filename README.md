@@ -5,9 +5,9 @@
 <h1 align="center">XHS Sync · 小红书 → Obsidian</h1>
 
 <p align="center">
-  将小红书的<strong>收藏、点赞、帖子、搜索结果、订阅账号</strong>一键同步到 Obsidian<br/>
-  图片/视频本地化 · AI 智能分类 · 热点分析日报 · 全程自动化<br/><br/>
-  Sync Xiaohongshu (RedNote) bookmarks, likes, posts, searches and followed accounts to Obsidian — with media, AI tagging and hotspot reports.
+  将小红书的<strong>收藏、点赞、帖子</strong>一键同步到 Obsidian<br/>
+  图片/视频本地化 · AI 智能分类 · 全程自动化<br/><br/>
+  Sync Xiaohongshu (RedNote) bookmarks, likes and posts to Obsidian — with media localization and AI classification.
 </p>
 
 <p align="center">
@@ -37,7 +37,7 @@
 
 | 功能 | 说明 |
 |------|------|
-| 📚 **五类内容同步** | 收藏 · 点赞 · 个人帖子 · 关键词搜索 · 订阅账号 |
+| 📚 **三类内容同步** | 收藏 · 点赞 · 个人帖子 |
 | 🖼️ **媒体本地化** | 图片和视频自动下载，离线永久可查 |
 | 🤖 **AI智能分类** | 接入任意 OpenAI 兼容 API，自动归入自定义分类目录 |
 | 💬 **评论抓取** | 可选同步主评论 + 子评论，设置抓取上限 |
@@ -59,18 +59,6 @@ RedNote/
 │   └── 笔记标题.md
 ├── Posts/                  # 个人发布的帖子
 ├── Likes/                  # 点赞的帖子
-├── Search/
-│   └── [关键词]/           # 每个关键词独立目录
-│       └── 笔记标题.md
-├── Users/
-│   └── [博主昵称]/
-│       ├── _profile.md     # 博主主页档案
-│       └── 笔记标题.md
-├── Hotspots/
-│   └── [分类名]/
-│       ├── 笔记标题.md
-│       └── 报告/
-│           └── 2026-05-28.md   # AI 热点日报
 └── Media/
     ├── 笔记标题/           # 每篇笔记独立媒体文件夹
     │   ├── 1.jpg
@@ -140,14 +128,14 @@ comments: 11
 
 #### 第二步：选择同步内容
 
-在设置中选择同步目标（收藏 / 点赞 / 个人帖子），或配置关键词搜索、账号订阅。
+在设置中选择同步目标（收藏 / 点赞 / 个人帖子）。
 
 #### 第三步：开始同步
 
 | 方式 | 操作 |
 |------|------|
 | 快速同步 | 点击左侧 Ribbon 栏云下载图标 |
-| 命令面板 | `Cmd/Ctrl+P` → 搜索「同步收藏 / 同步点赞 / 关键词搜索…」|
+| 命令面板 | `Cmd/Ctrl+P` → 搜索「同步收藏 / 同步点赞…」|
 | 自动同步 | 在设置中开启「定时自动同步」 |
 
 同步进度以通知气泡实时显示，完成后提示新增条数。
@@ -173,24 +161,6 @@ comments: 11
 #### AI 分类
 
 配置任意 OpenAI 兼容 API（OpenAI / Kimi / DeepSeek / OpenRouter 等）后，同步时自动将笔记归入自定义分类目录，并可开启 AI 打标（每篇生成 3–6 个语义标签）。
-
-#### 关键词搜索
-
-| 设置项 | 说明 |
-|--------|------|
-| 关键词列表 | 多关键词，每个独立目录，支持增量 |
-| 排序方式 | 综合 / 最新 / 最多点赞 / 评论数 / 收藏数 |
-| 笔记类型 | 不限 / 视频 / 图文 |
-| 时间范围 | 不限 / 一天 / 一周 / 半年 |
-| 定时自动搜索 | 按间隔自动执行，新增内容自动入库 |
-
-#### 账号订阅
-
-输入博主主页 URL 中 `/user/profile/` 后的 UID，每次拉取最新 30 条帖子，支持随机延迟避免触发限流。
-
-#### 热点管理
-
-按分类维护关键词列表（4–8 个/分类），一键触发：搜索最多点赞前 30 条 → AI 深度分析前 15 条爆款因素 → 生成结构化日报保存至 `Hotspots/[分类]/报告/YYYY-MM-DD.md`。
 
 ---
 
@@ -219,15 +189,13 @@ Cookie 已过期，点击「重新登录」完成一次登录即可。
 
 | Feature | Description |
 |---------|-------------|
-| 📚 **5 content types** | Bookmarks · Likes · Posts · Keyword search · Account subscriptions |
+| 📚 **3 content types** | Bookmarks · Likes · Posts |
 | 🖼️ **Local media** | Images and videos downloaded locally for offline access |
 | 🤖 **AI classification** | Auto-categorize notes into custom folders via any OpenAI-compatible API |
-| 🏷️ **AI tagging** | Generate 3–6 semantic tags per note, written to frontmatter |
-| 🔥 **Hotspot reports** | Fetch top-liked content by category, AI-analyzes viral factors, saves daily report |
-| 📰 **Account subscriptions** | Follow XHS creators by UID, sync latest posts automatically |
 | 💬 **Comment sync** | Optionally sync top-level and sub-comments with configurable limits |
 | ⏱️ **Auto sync** | Background timer-based sync, pauses on rate-limit or auth failure |
 | 🔄 **Incremental sync** | Tracks synced IDs to avoid duplicates |
+| 📁 **Album folders** | Bookmarks organized into album sub-folders |
 | 📝 **Structured notes** | Frontmatter with id, author, tags, aiTags, category, likes, comments |
 
 ### 🚀 Installation
@@ -256,7 +224,7 @@ Cookie 已过期，点击「重新登录」完成一次登录即可。
 ### 📖 Quick Start
 
 1. **Login** — Settings → XHS Sync → **Login** → complete login in the built-in browser → click **Extract Cookie**
-2. **Configure** — Choose sync target, add keywords, or subscribe to accounts
+2. **Configure** — Choose your sync target (bookmarks, likes, or posts)
 3. **Sync** — Click the cloud icon in the ribbon, or use the command palette (`Cmd/Ctrl+P`)
 
 ### ⚙️ Configuration
