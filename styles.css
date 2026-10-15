@@ -112,3 +112,10 @@
   gap: 8px;
   margin-top: 12px;
 }
+
+/* 出错提示里的按钮 */
+.redbook-pull-notice-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
