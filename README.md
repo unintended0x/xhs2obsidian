@@ -33,6 +33,14 @@
 
 ## 中文说明
 
+### v1.3.8 更新
+
+设置页现将正文保存数、非零待补与下一步操作集中展示，专辑明细和排查工具默认折叠。收藏保存数包含专辑，同一篇笔记只计一次。同步遇到登录过期或请求拒绝时暂停；已保存正文、媒体和评论分别记录状态，旧文件与用户修改受到保护。
+
+**验证范围**：129 项离线测试、类型检查和构建通过；真实 Obsidian 网页采集和问题账号恢复尚未验收，不代表 406 或大专辑完整采集已解决。列表末页仍未确认，更多回复尚未自动展开。最低要求为 Obsidian 1.1.0 桌面版；最低宿主兼容性尚未实测。
+
+更新包和完整说明见 [v1.3.8 Release](https://github.com/unintended0x/xhs2obsidian/releases/tag/v1.3.8)。
+
 ### ✨ 功能一览
 
 | 功能 | 说明 |
@@ -111,7 +119,7 @@ comments: 11
 4. 安装完成后，在 Obsidian **设置 → 第三方插件** 中启用 **XHS Sync**
 5. BRAT 会跟随 GitHub Release 自动检测并更新到最新版本
 
-> **注意：** 本插件依赖 Electron WebView，仅支持 Obsidian **桌面端**（macOS / Windows / Linux）。
+> **注意：** 本插件使用 Electron 浏览器窗口，仅支持 Obsidian **桌面端**（macOS / Windows / Linux）。
 
 ---
 
@@ -150,7 +158,6 @@ comments: 11
 |--------|--------|------|
 | 存储目录 | `RedNote` | Vault 内根目录名 |
 | 同步内容 | 收藏 | Ribbon 图标触发的同步类型 |
-| 每批数量 | 5 | 每次 API 请求条目数，建议 5–10 |
 | 同步标签 | 开启 | 将小红书话题标签写入 frontmatter |
 | 同步专辑 | 关闭 | 收藏夹按专辑分子目录 |
 | 抓取评论 | 关闭 | 同步主评论及子评论 |
@@ -170,7 +177,7 @@ comments: 11
 Cookie 已过期，点击「重新登录」完成一次登录即可。
 
 **Q：同步一段时间后报错停止**  
-触发了小红书频率限制。将「每批数量」调小至 3–5，等待几分钟后重试。
+小红书暂未接受请求。请先在网页检查登录或验证提示，稍后再继续同步；无效的「每批数量」设置已隐藏。
 
 **Q：图片或视频没有下载**  
 小红书媒体链接有时效性，建议尽快同步。清除缓存后重新同步可重试失败项。
@@ -184,6 +191,10 @@ Cookie 已过期，点击「重新登录」完成一次登录即可。
 ---
 
 ## English
+
+### v1.3.8 update
+
+Simplified settings, corrected album-aware bookmark counts, and recoverable per-account sync state with separate body, media and comment progress. Existing files and user edits are preserved. All 129 offline tests, type checking and the production build pass. Live Obsidian collection and affected-account recovery remain unverified; complete list enumeration and expanded replies are not guaranteed. Requires Obsidian desktop 1.1.0 or later; minimum-host compatibility has not been tested.
 
 ### ✨ Features
 
@@ -219,7 +230,7 @@ Cookie 已过期，点击「重新登录」完成一次登录即可。
 4. Once installed, enable **XHS Sync** in Obsidian **Settings → Community plugins**
 5. BRAT will automatically detect new GitHub Releases and keep the plugin up to date
 
-> **Note:** This plugin requires Electron WebView and only works on Obsidian **desktop** (macOS / Windows / Linux).
+> **Note:** This plugin uses Electron browser windows and only works on Obsidian **desktop** (macOS / Windows / Linux).
 
 ### 📖 Quick Start
 
@@ -233,7 +244,6 @@ Cookie 已过期，点击「重新登录」完成一次登录即可。
 |---------|---------|-------------|
 | Root folder | `RedNote` | Storage directory in your vault |
 | Sync target | Bookmarks | What to sync via ribbon icon |
-| Batch size | 5 | Items per API request (5–10 recommended) |
 | Sync tags | On | Write hashtags to frontmatter |
 | Sync albums | Off | Organize bookmarks into album sub-folders |
 | Fetch comments | Off | Sync comments and replies per note |

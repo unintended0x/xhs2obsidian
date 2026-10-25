@@ -119,3 +119,179 @@
   gap: 8px;
   margin-top: 8px;
 }
+
+/* 同步概览：结果与操作常显，核对明细和维护工具折叠。 */
+.redbook-pull-settings {
+  container: redbook-settings / inline-size;
+}
+
+.redbook-pull-toggle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 8px;
+  margin: 8px 16px;
+}
+
+.redbook-pull-overview {
+  padding: 12px 16px 4px;
+  container-type: inline-size;
+}
+
+.redbook-pull-status {
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: var(--background-secondary);
+}
+
+.redbook-pull-status.is-warning {
+  background: rgba(var(--color-yellow-rgb), 0.12);
+}
+
+.redbook-pull-status-title {
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-semibold);
+}
+
+.redbook-pull-status-description {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  overflow-wrap: anywhere;
+}
+
+.redbook-pull-overview-label {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.redbook-pull-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.redbook-pull-stat {
+  padding: 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-secondary);
+}
+
+.redbook-pull-stat-value {
+  margin-top: 4px;
+  font-size: 24px;
+  font-weight: var(--font-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.redbook-pull-stat-unit {
+  margin-left: 4px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-normal);
+}
+
+.redbook-pull-pending,
+.redbook-pull-attention {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-top: 12px;
+  font-size: var(--font-ui-smaller);
+}
+
+.redbook-pull-overview [hidden] {
+  display: none !important;
+}
+
+.redbook-pull-sync-actions.setting-item {
+  padding: 16px 0;
+  border-top: none;
+}
+
+.redbook-pull-sync-actions .setting-item-info {
+  display: none;
+}
+
+.redbook-pull-sync-actions .setting-item-control {
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.redbook-pull-sync-actions button {
+  height: auto;
+  min-height: var(--input-height);
+  white-space: normal;
+}
+
+.redbook-pull-status-details {
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: var(--font-ui-smaller);
+}
+
+.redbook-pull-status-details > summary {
+  padding: 12px 0;
+  color: var(--text-muted);
+  cursor: var(--cursor);
+}
+
+.redbook-pull-status-detail-body {
+  padding-bottom: 8px;
+}
+
+.redbook-pull-scope-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 8px;
+  padding: 10px 0;
+  border-top: 1px solid var(--background-modifier-border);
+  overflow-wrap: anywhere;
+}
+
+.redbook-pull-scope-result {
+  color: var(--text-muted);
+}
+
+.redbook-pull-status-tools .setting-item {
+  padding: 12px 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.redbook-pull-status-tools .setting-item-info {
+  min-width: min(180px, 100%);
+  overflow-wrap: anywhere;
+}
+
+.redbook-pull-status-tools .setting-item-control {
+  flex-wrap: wrap;
+}
+
+@container (max-width: 360px) {
+  .redbook-pull-stat {
+    padding: 10px 8px;
+  }
+
+  .redbook-pull-scope-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  }
+
+  .redbook-pull-scope-result {
+    grid-column: 2;
+  }
+}
+
+@container redbook-settings (max-width: 420px) {
+  .redbook-pull-storage-setting.setting-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .redbook-pull-storage-setting .setting-item-control {
+    justify-content: flex-start;
+  }
+}
